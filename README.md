@@ -28,7 +28,7 @@ This assessment involves creating a custom Odoo module for a simple library mana
 
 ## Getting Started
 
-First, [fork](https://github.com/odevsolutions/library/fork) this repository and open it in Github Codespaces. Add your created module in `/addons_library` folder.
+First, [fork](https://github.com/mikhail-trunks-silao/exam-library/fork) this repository and open it in Github Codespaces. Add your created module in `/addons_library` folder.
 
 Refer to the sample snippet below for quick setup:
 
