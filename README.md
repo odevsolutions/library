@@ -17,7 +17,7 @@ Basic Git knowledge is required. Here are some resources to help you get started
 
 ### Codespaces
 
-This repository is set up to be opened in [Github Codspaces](https://github.com/features/codespaces), allowing you to easily start the exam without making any changes to your local machine.
+This repository is set up to be opened in [Github Codspaces](https://github.com/features/codespaces), allowing you to easily start the exam without making any changes to your local machine. <br/>
 Codespaces includes a [free tier](https://docs.github.com/en/billing/concepts/product-billing/github-codespaces#free-and-billed-use-by-personal-accounts) for personal accounts, with a limit of 120 core hours per month. Please note that OdevSolutions Co. will not cover any costs incurred from using Codespaces.
 
 If you prefer a different kind of setup for your development environment, you are free to use it.
@@ -28,35 +28,40 @@ This assessment involves creating a custom Odoo module for a simple library mana
 
 ## Getting Started
 
-First, [fork](https://github.com/mikhail-trunks-silao/exam-library/fork) this repository.<br/>
+First, [fork](https://github.com/odevsolutions/library) this repository.<br/>
 Open your forked repository in Github Codespaces.
-<img width="756" height="639" alt="Image" src="https://github.com/user-attachments/assets/3993028e-18df-4829-8a98-fe0c1f68ad7d"/><br/>
+<img width="650" height="550" alt="Image" src="https://github.com/user-attachments/assets/3993028e-18df-4829-8a98-fe0c1f68ad7d"/><br/>
 Add your created module in `/addons_library` folder.
 
-Refer to the sample snippet below for quick setup:
+Inside the Codespace, open a terminal and run the following commands for a quick Odoo setup:
 
 ```bash
-# Build the containers
+# Build the Odoo containers
 docker-compose up -d
 ```
+After building the containers test if you can access Odoo via `8069` [forwarded port](https://docs.github.com/en/codespaces/developing-in-a-codespace/forwarding-ports-in-your-codespace#about-forwarded-ports). <br/>
+If the port `8069` is not automatically forwarded from the Codespace to you local machine you 
+can refer to the tutorial below on how to add it manually. <br/>
+[Github: Forwarding ports in your codespace](https://docs.github.com/en/codespaces/developing-in-a-codespace/forwarding-ports-in-your-codespace?tool=vscode#forwarding-a-port-1)
 
-Refer below on how to stop, restart and remove containers.
+Refer below on how to stop, restart and remove the Odoo containers.
 
 ```bash
 # Stop and remove the containers
 docker-compose down -d
 
 # Restart the containers
-docker restart exam-library-web-1 exam-library-db-1
+docker restart library-web-1 library-db-1
 
 # Stop the containers
-docker stop exam-library-web-1 exam-library-db-1
+docker stop library-web-1 library-db-1
 ```
 
-If the port `8069` is not automatically forwarded from the Codespace to you local machine you 
-can refer to the tutorial below on how to add it manually. <br/>
-[Github: Forwarding ports in your codespace](https://docs.github.com/en/codespaces/developing-in-a-codespace/forwarding-ports-in-your-codespace?tool=vscode#forwarding-a-port-1)
-
+To view Odoo logs, please refer to the instructions below on how to attach a terminal to Odoo.
+```bash
+# Build the Odoo containers
+docker attach library-web-1 
+```
 
 ## Tasks
 
