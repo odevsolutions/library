@@ -11,6 +11,7 @@ services:
       - odoo-web-data:/var/lib/odoo
       - ./config:/etc/odoo
       - ./addons_library:/mnt/addons_library
+      - ./addons_library:/workspaces/library/addons_library
     environment:
       - PASSWORD=odoo
     stdin_open: true

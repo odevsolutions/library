@@ -19,5 +19,5 @@
         "views/library_book_views.xml",
     ],
     "installable": True,
-    "application": False,
+    "application": True,
 }
