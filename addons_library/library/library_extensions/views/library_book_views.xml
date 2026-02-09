@@ -1,0 +1,56 @@
+<odoo>
+    <!-- Book Form View -->
+    <record id="view_library_book_form_inherit" model="ir.ui.view">
+        <field name="name">library.book.form.inherit</field>
+        <field name="model">library.book</field>
+        <field name="inherit_id" ref="library.view_library_book_form"/>
+        <field name="arch" type="xml">
+            <xpath expr="//field[@name='name']" position="after">
+                <field name="author_id"/>
+                <field name="category_id"/>
+            </xpath>
+        </field>
+    </record>
+
+    <!-- Book List View -->
+    <record id="view_library_book_tree_inherit" model="ir.ui.view">
+        <field name="name">library.book.tree.inherit</field>
+        <field name="model">library.book</field>
+        <field name="inherit_id" ref="library.view_library_book_tree"/>
+        <field name="arch" type="xml">
+            <xpath expr="//tree/field[@name='name']" position="after">
+                <field name="author_id"/>
+                <field name="category_id"/>
+            </xpath>
+        </field>
+    </record>
+
+    <!-- Book Category List View -->
+    <record id="view_library_book_category_tree" model="ir.ui.view">
+        <field name="name">library.book.category.tree</field>
+        <field name="model">library.book.category</field>
+        <field name="arch" type="xml">
+            <tree>
+                <field name="name"/>
+            </tree>
+        </field>
+    </record>
+
+    <!-- Book Category Form View -->
+    <record id="view_library_book_category_form" model="ir.ui.view">
+        <field name="name">library.book.category.form</field>
+        <field name="model">library.book.category</field>
+        <field name="arch" type="xml">
+            <form>
+                <sheet>
+                    <group>
+                        <field name="name"/>
+                    </group>
+                </sheet>
+            </form>
+        </field>
+    </record>
+
+    <!-- Menu Item for Book Categories -->
+    <menuitem id="menu_library_book_category" name="Book Category" parent="library.menu_library_root"/>
+</odoo>
