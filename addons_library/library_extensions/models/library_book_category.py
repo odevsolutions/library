@@ -1,4 +1,5 @@
 # -*- coding: utf-8 -*-
+import random  # <--- #Newly Added Import
 from odoo import models, fields
 
 class LibraryBookCategory(models.Model):
